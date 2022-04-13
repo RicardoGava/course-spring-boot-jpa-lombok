@@ -1,10 +1,7 @@
 package com.ibm.course.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,7 +10,7 @@ import java.time.Instant;
 @Entity
 @Table(name = "tb_payment")
 @Getter @Setter
-@NoArgsConstructor
+@NoArgsConstructor @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Payment implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -26,9 +23,4 @@ public class Payment implements Serializable {
     @OneToOne @MapsId
     private Order order;
 
-    public Payment(Long id, Instant moment, Order order) {
-        this.id = id;
-        this.moment = moment;
-        this.order = order;
-    }
 }
