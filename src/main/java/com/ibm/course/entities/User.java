@@ -11,8 +11,8 @@ import java.util.List;
 @Entity
 @Table(name = "tb_user")
 @Getter @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
